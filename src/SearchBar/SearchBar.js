@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
-import "./SearchBar.css";
+import "./SearchBar.scss";
+import { Value } from "sass";
 
 function MyComponent() {
   const iconRef = useRef(null);
@@ -22,6 +23,7 @@ function MyComponent() {
     setIsProcessing(true);
     setIsActive(false);
     inputRef.current.disabled = true;
+    setInput("");
     setTimeout(() => {
       setIsProcessing(false);
       inputRef.current.disabled = false;
