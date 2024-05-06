@@ -1,11 +1,21 @@
+$image-path: './background_photo_desktop.jpg';
+$bg-color-h1 : #010c3f;
+$h1-highlight:#6c41ec;
+%unSelected{
+  -webkit-user-select: none; /* For Safari,Chrome etc. */
+    -moz-user-select: none; /* for Firefox */
+    -ms-user-select: none; /* for Explorer*/
+    user-select: none; /* Usual browser */
+}
 body,
 html,
 #root {
   height: 100%;
 }
 *{
+    box-sizing: border-box;
     margin: 0;
-    padding: 0;
+    
 }
 html {
   font-size: 18px;
@@ -13,7 +23,7 @@ html {
 
 h1 {
   padding: .77rem 0;
-  background-color: #010c3f;
+  background-color: $bg-color-h1;
   text-align: center;
   font-family: 'Poppins', sans-serif;
   font-size: 1.88rem;
@@ -22,7 +32,7 @@ h1 {
 
 h1 .highlight {
     
-  color: #6c41ec;
+  color: $h1-highlight;
 }
 
 h2 {
@@ -33,7 +43,7 @@ h2 {
 .App {
   height: 100%;
   padding: 0 17% 10% 17%;
-  background-image: url('./background_photo_desktop.jpg');
+  background-image: url($image-path);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -51,11 +61,8 @@ h2 {
   justify-content: space-between;
   width: 100%;
 }
-.unselectable {
-    -webkit-user-select: none; /* Для браузеров на основе WebKit (Chrome, Safari и т. д.) */
-    -moz-user-select: none; /* Для браузеров на основе Gecko (Firefox) */
-    -ms-user-select: none; /* Для Internet Explorer */
-    user-select: none; /* Стандартное свойство */
+.unSelectable {
+   @extend %unSelected;
   }
 @media only screen and (max-width: 1020px) {
   .App-playlist {
