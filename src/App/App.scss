@@ -1,3 +1,4 @@
+
 $image-path: './background_photo_desktop.jpg';
 $bg-color-h1 : #010c3f;
 $h1-highlight:#6c41ec;
@@ -23,7 +24,7 @@ html {
 
 h1 {
   padding: .77rem 0;
-  background-color: $bg-color-h1;
+  background-color: #010c3f;
   text-align: center;
   font-family: 'Poppins', sans-serif;
   font-size: 1.88rem;
@@ -38,11 +39,12 @@ h1 .highlight {
 h2 {
   font-family: 'Poppins', sans-serif;
   font-size: 1.55rem;
+  
 }
 
 .App {
   height: 100%;
-  padding: 0 17% 10% 17%;
+  padding: 0 7% 10% 7%;
   background-image: url($image-path);
   background-size: cover;
   background-position: center;
@@ -50,11 +52,9 @@ h2 {
   font-family: 'Work Sans', sans-serif;
   font-weight: 500;
   color: #fff;
+
 }
-.App:first-child{
-    
-    padding: 0;
-}
+
 
 .App-playlist {
   display: flex;
@@ -64,6 +64,9 @@ h2 {
 .unSelectable {
    @extend %unSelected;
   }
+
+
+
 @media only screen and (max-width: 1020px) {
   .App-playlist {
     align-items: center;

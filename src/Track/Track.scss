@@ -1,0 +1,26 @@
+@import '../App/App.scss';
+.track{
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    padding: 20px;
+    &::after{
+        content: '';
+        display: block; 
+        border-bottom: 2px solid #ffffff71; 
+        width: 100%;
+    }
+     p{
+        color: #ffffff71;
+        padding-bottom: 1%;
+    }
+
+    .Track_add_butt{
+        justify-self: end;
+        cursor: pointer;
+        @extend %unSelected;
+        font-size: 1.4em;
+        
+
+    }
+}

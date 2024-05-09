@@ -1,8 +1,7 @@
 import React, { useRef, useState } from "react";
 import "./SearchBar.scss";
-import { Value } from "sass";
 
-function MyComponent() {
+function SearchBar() {
   const iconRef = useRef(null);
   const inputRef = useRef(null);
   const [input, setInput] = useState("");
@@ -61,4 +60,4 @@ function MyComponent() {
   );
 }
 
-export default MyComponent;
+export default SearchBar;
