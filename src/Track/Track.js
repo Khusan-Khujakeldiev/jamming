@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import "./Track.scss";
 
 function Track(props) {
-  const [deleted, setDeleted] = useState(false);
   const handleClick = () => {
-    props.deleteFromPLaylist(props.track_list.id);
-    setDeleted(true);
+    props.context === "SearchResults"
+      ? props.addToPLayList(props.track_list)
+      : props.deleteFromPLaylist(props.track_list.id);
   };
   return (
-    <div className={`track ${deleted ? "deleted" : ""}`}>
+    <div className="track">
       <div>
         <h3>{props.track_list.Music_name}</h3>
         <p>
@@ -18,9 +18,7 @@ function Track(props) {
       <div
         className="Track_add_butt"
         onClick={() => {
-          props.context === "SearchResults"
-            ? props.addToPLayList(props.track_list)
-            : handleClick();
+          handleClick();
         }}
       >
         {props.context === "SearchResults" && "+"}
