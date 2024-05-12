@@ -6,7 +6,7 @@ import SearchResults from "../SearchResults/SearchResults";
 import PlayList from "../Playlist/Playlist";
 
 function App() {
-  const [tracks, setTaracks] = useState([
+  const [tracks, setTracks] = useState([
     {
       id: 1,
       Music_name: "Konsta",
@@ -33,42 +33,53 @@ function App() {
       Language: "uz",
     },
     {
-      id: 5,
+      id: 6,
       Music_name: "UzBoom",
       Music_albom: "Bu Voqiya",
       Language: "uz",
     },
     {
-      id: 5,
+      id: 7,
       Music_name: "UzBoom",
       Music_albom: "Bu Voqiya",
       Language: "uz",
     },
     {
-      id: 5,
+      id: 8,
       Music_name: "UzBoom",
       Music_albom: "Bu Voqiya",
       Language: "uz",
     },
     {
-      id: 5,
+      id: 9,
       Music_name: "UzBoom",
       Music_albom: "Bu Voqiya",
       Language: "uz",
     },
     {
-      id: 5,
+      id: 10,
       Music_name: "UzBoom",
       Music_albom: "Bu Voqiya",
       Language: "uz",
     },
     {
-      id: 5,
+      id: 11,
       Music_name: "UzBoom",
       Music_albom: "Bu Voqiya",
       Language: "uz",
     },
   ]);
+  const [playlist, setPlaylist] = useState([]);
+  const addToPLayList = (track) => {
+    let isInArray = false;
+    playlist.forEach((m) => {
+      if (track.id === m.id) isInArray = true;
+    });
+    if (!isInArray) setPlaylist([...playlist, track]);
+  };
+  const deleteFromPLaylist = (id) => {
+    setPlaylist(playlist.filter((e) => e.id !== id));
+  };
   return (
     <div>
       <h1 className="unSelectable">
@@ -77,8 +88,14 @@ function App() {
       <div className="App">
         <SearchBar></SearchBar>
         <div className="App-playlist">
-          <SearchResults track_list={tracks}></SearchResults>
-          <PlayList></PlayList>
+          <SearchResults
+            addToPLayList={addToPLayList}
+            track_list={tracks}
+          ></SearchResults>
+          <PlayList
+            track_list={playlist}
+            deleteFromPLaylist={deleteFromPLaylist}
+          ></PlayList>
         </div>
       </div>
     </div>
