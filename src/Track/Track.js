@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Track.scss";
 
 function Track(props) {

@@ -69,6 +69,8 @@ function App() {
       Language: "uz",
     },
   ]);
+  const [playListName, setPlayListName] = useState("PlayList");
+  console.log(playListName);
   const [playlist, setPlaylist] = useState([]);
   const addToPLayList = (track) => {
     let isInArray = false;
@@ -93,6 +95,8 @@ function App() {
             track_list={tracks}
           ></SearchResults>
           <PlayList
+            name={playListName}
+            onNameChange={setPlayListName}
             track_list={playlist}
             deleteFromPLaylist={deleteFromPLaylist}
           ></PlayList>

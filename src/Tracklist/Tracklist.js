@@ -1,21 +1,18 @@
 import React from "react";
-import Track from "../Track/Track";
+
+import PlayListName from "../PlayListName/PlayListName";
 
 function TrackList(props) {
-  if (!props.track_list || !Array.isArray(props.track_list)) {
-    return null;
-  }
   return (
     <div>
-      {props.track_list.map((track) => (
-        <Track
-          addToPLayList={props.addToPLayList}
-          deleteFromPLaylist={props.deleteFromPLaylist}
-          track_list={track}
-          key={track.id}
-          context={props.context}
-        ></Track>
-      ))}
+      <PlayListName
+        context={props.context}
+        addToPLayList={props.addToPLayList}
+        deleteFromPLaylist={props.deleteFromPLaylist}
+        track_list={props.track_list}
+        name={props.name}
+        onNameChange={props.onNameChange}
+      ></PlayListName>
     </div>
   );
 }

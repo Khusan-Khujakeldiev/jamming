@@ -1,0 +1,27 @@
+.playlist_input{
+    width: 80%;
+    padding: 2rem 1.5rem 0 0;
+    font-size: 1.7rem;
+    border-top:0;
+    border-left:0;
+    border-right: 0;
+    color: #fff;
+
+    border-color:#ffffff71;;
+    background-color: transparent;
+    margin-left: 20px;
+    &:hover, 
+    &:focus,
+    &:active {
+        outline: none;
+    }
+    
+ 
+}
+.playlist_h2{
+    cursor: pointer;
+     padding: 40px 20px 20px 20px;
+     border-bottom: 2px;
+       
+    
+}

@@ -11,6 +11,8 @@ function PlayList(props) {
           context="playlist"
           deleteFromPLaylist={props.deleteFromPLaylist}
           track_list={props.track_list}
+          name={props.name}
+          onNameChange={props.onNameChange}
         ></TrackList>
       </div>
     </div>
