@@ -1,3 +1,27 @@
+/* Стиль для всей полосы прокрутки */
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+/* Стиль для дорожки прокрутки (фон полосы прокрутки) */
+::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 20px;
+}
+
+/* Стиль для ползунка прокрутки */
+::-webkit-scrollbar-thumb {
+    background-color: #ffffffd7; /* Полупрозрачный цвет */
+    border-radius: 10px;
+    border: 2px solid transparent; /* Убедитесь, что цвет границы прозрачный, чтобы создать эффект закругления */
+
+    cursor: pointer;
+}
+
+/* Стиль для ползунка при наведении */
+::-webkit-scrollbar-thumb:hover {
+    background-color: #ffffffbb; /* Полупрозрачный цвет при наведении */
+}
 .trackList{
     overflow-y: auto;
     max-height: 90vh;

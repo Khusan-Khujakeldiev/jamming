@@ -10,9 +10,9 @@ function Track(props) {
   return (
     <div className="track">
       <div>
-        <h3>{props.track_list.Music_name}</h3>
+        <h3>{props.track_list.name}</h3>
         <p>
-          {props.track_list.Language}|{props.track_list.Music_albom}
+          {props.track_list.artist}|{props.track_list.album}
         </p>
       </div>
       <div

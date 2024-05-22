@@ -12,6 +12,8 @@ function TrackList(props) {
         track_list={props.track_list}
         name={props.name}
         onNameChange={props.onNameChange}
+        getPlayListUris={props.getPlayListUris}
+        clearPlayList={props.clearPlayList}
       ></PlayListName>
     </div>
   );

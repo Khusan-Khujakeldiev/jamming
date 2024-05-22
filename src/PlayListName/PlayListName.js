@@ -17,6 +17,11 @@ function PlayListName(props) {
       : setIsEditing(false);
     props.onNameChange(name);
   };
+  const savePlayList = () => {
+    const uri = props.getPlayListUris(props.track_list);
+    console.log(uri);
+    props.clearPlayList();
+  };
   return (
     <div>
       {props.context === "playlist" && isEditing ? (
@@ -46,13 +51,15 @@ function PlayListName(props) {
           context={props.context}
         ></Track>
       ))}
-      <div className="button-container">
-        <button className="btn-playListName">Save to Spotify</button>
-      </div>
+      {props.context === "playlist" && (
+        <div className="button-container">
+          <button onClick={savePlayList} className="btn-playListName">
+            Save to Spotify
+          </button>
+        </div>
+      )}
     </div>
   );
 }
-{
-  /* <button onClick={handleSave}>0</button> */
-}
+
 export default PlayListName;
