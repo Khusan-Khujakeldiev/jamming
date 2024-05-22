@@ -46,6 +46,9 @@ function PlayListName(props) {
           context={props.context}
         ></Track>
       ))}
+      <div className="button-container">
+        <button className="btn-playListName">Save to Spotify</button>
+      </div>
     </div>
   );
 }
