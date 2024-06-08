@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-
+import React, { useEffect, useState } from "react";
+import Spotify from "../Uri/Spotify";
 import SearchBar from "../SearchBar/SearchBar";
 import "./App.scss";
 import SearchResults from "../SearchResults/SearchResults";
@@ -104,6 +104,12 @@ function App() {
   const clearPlayList = () => {
     setPlaylist([]);
   };
+
+  useEffect(() => {
+    Spotify.getAccessToken();
+  }, []);
+
+  const saveToSpotify = () => {};
   return (
     <div>
       <h1 className="unSelectable">
