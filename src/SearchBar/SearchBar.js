@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import "./SearchBar.scss";
 
-function SearchBar() {
+function SearchBar({ onSearch }) {
   const iconRef = useRef(null);
   const inputRef = useRef(null);
   const [input, setInput] = useState("");
@@ -22,6 +22,7 @@ function SearchBar() {
     setIsProcessing(true);
     setIsActive(false);
     inputRef.current.disabled = true;
+    onSearch(input);
     setInput("");
     setTimeout(() => {
       setIsProcessing(false);
@@ -51,6 +52,7 @@ function SearchBar() {
                 onFocus={handleFocus}
                 onBlur={handleBlur}
                 onChange={handleInputChange}
+                value={input}
               />
             </div>
           </div>

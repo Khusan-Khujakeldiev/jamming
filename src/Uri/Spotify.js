@@ -1,4 +1,4 @@
-const clientId = "YOUR_SPOTIFY_CLIENT_ID"; // Ваш клиентский ID Spotify
+const clientId = "f764b5d13420496f92dffbad388c95ed"; // Ваш клиентский ID Spotify
 const redirectUri = "http://localhost:3000/"; // Ваш redirect URI
 let accessToken; // Переменная для хранения токена доступа
 let expiresIn; // Переменная для хранения времени жизни токена
@@ -24,6 +24,28 @@ const Spotify = {
 
     const accessUrl = `https://accounts.spotify.com/authorize?client_id=${clientId}&response_type=token&scope=playlist-modify-public&redirect_uri=${redirectUri}`;
     window.location = accessUrl; // Перенаправляем пользователя на страницу авторизации
+  },
+
+  search(term) {
+    const token = this.getAccessToken();
+    return fetch(`https://api.spotify.com/v1/search?type=track&q=${term}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
+      .then((response) => response.json())
+      .then((jsonResponse) => {
+        if (!jsonResponse.tracks) {
+          return [];
+        }
+        return jsonResponse.tracks.items.map((track) => ({
+          id: track.id,
+          name: track.name,
+          artist: track.artists[0].name,
+          album: track.album.name,
+          uri: track.uri,
+        }));
+      });
   },
 
   // Метод для сохранения плейлиста
