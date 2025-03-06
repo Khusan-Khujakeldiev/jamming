@@ -1,5 +1,5 @@
 const clientId = "f764b5d13420496f92dffbad388c95ed"; // Ваш клиентский ID Spotify
-const redirectUri = "http://localhost:3000/"; // Ваш redirect URI
+const redirectUri = "https://jamming-virid.vercel.app/"; // Ваш redirect URI
 let accessToken; // Переменная для хранения токена доступа
 let expiresIn; // Переменная для хранения времени жизни токена
 
